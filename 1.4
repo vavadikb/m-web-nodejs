@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #block{
+            background-color: black;
+            width: 200px;
+            height: 200px;
+            visibility: visible;
+        }       
+        #btn{
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        #btn:hover{
+            background-color: blueviolet;
+        }
+</style>
+</head>
+<body>
+    <div id="block" ></div>
+    <button id="btn" onclick="myFunction()" >Click me</button>
+    <script>
+        document.getElementById("block").style.visibility = 'visible'
+        function myFunction (){
+                if (document.getElementById("block").style.visibility==='visible'){
+                    hidden()
+                }
+                else{
+                    visible()
+                }
+        }
+        function visible(){
+            document.getElementById("block").style.visibility = 'visible'
+        }
+        function hidden(){
+            document.getElementById("block").style.visibility = 'hidden'
+        }
+    </script>
+</body>
+</html>
