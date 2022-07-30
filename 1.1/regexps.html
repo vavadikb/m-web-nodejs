@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Пример веб-страницы</title>
+   </head>
+<html>
+
+  <script>
+
+    let email = prompt("write your gmail")
+    let phone = prompt ("write your phone")
+    let password = prompt("write your pasword")
+    
+    const Validator = {
+      validatePhone: function (phone) {
+        const regexp = /^(\+\d{1,2}[\s-]?|[\s-]{0,4})?\(?(\d[\s-)]{0,2}){3}(\d[\s-]?){7}$/g;
+        return regexp.test(phone);
+      },
+      validatePassword: function (password) {
+        const regexp = /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}/;
+        return regexp.test(password);
+      },
+      validateEmail: function (email) {
+        const regexp = /^[^\s\d\.-]([a-zA-Z\-\.\+\d]{1,20})@([a-zA-Z\d\.\!\$\%\&\’\*\+\/\=\?\^\_\-]{1,15})\.([a-zA-Z]{1,5})$/g;
+        return regexp.test(email);
+      }
+    }
+    
+    
+    //email
+    if(!Validator.validateEmail(email)) {
+        console.log(`Email - ${email} is not valid.`)
+      }
+      else{
+        console.log(`Email - ${email} is valid!`)
+      }
+    
+    
+    //phone
+      if(!Validator.validatePhone(phone)) {
+        console.log(`Phone - ${phone} is not valid.`);
+      }else{
+        console.log(`Phone - ${phone} is valid!`)
+      }
+    //password
+    if(!Validator.validatePassword(password)) {
+        console.log(`Password - ${password} is not valid.`);
+      }
+      else{
+        console.log(`Password - ${password} is valid!`);
+      }
+    
+      
+    </script>
+
+    
+</html>
